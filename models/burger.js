@@ -6,6 +6,11 @@ const burger = {
     orm.selectAll('burgers', result => {
       cb(result)
     })
+  },
+  addOneBurger: (column, value, cb) => {
+    orm.insertOne('burgers', column, value, function (result) {
+      cb(result);
+    });
   }
 
 };
