@@ -11,6 +11,11 @@ const burger = {
     orm.insertOne('burgers', column, value, function (result) {
       cb(result);
     });
+  },
+  updateOne: function (value, condition, cb) {
+    orm.updateOne("burgers", value, condition, function (res) {
+      cb(res);
+    });
   }
 
 };
