@@ -34,6 +34,30 @@ const orm = {
         });
     },
 
+    insertOne: function (table, column, value, cb) {
+        var queryStr = "INSERT INTO " + table;
+        queryStr += " (";
+        queryStr += column.toString();
+        queryStr += ") ";
+        queryStr += "VALUES (";
+        queryStr += printQuestionMarks(value.length);
+        queryStr += ") ";
+
+
+        console.log(queryStr);
+        console.log(value);
+
+        connection.query(queryStr, value, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    }
+
 };
+
+
 
 module.exports = orm;
