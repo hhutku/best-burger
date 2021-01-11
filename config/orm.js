@@ -25,5 +25,15 @@ function objToSql(ob) {
     return arr.toString();
 }
 
+const orm = {
+    selectAll: function (table, cb) {
+        const queryStr = `SELECT * FROM ??`;
+        connection.query(queryStr, table, (err, result) => {
+            if (err) throw (err);
+            cb(result);
+        });
+    },
+
+};
 
 module.exports = orm;
