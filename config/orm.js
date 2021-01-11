@@ -54,6 +54,21 @@ const orm = {
 
             cb(result);
         });
+    },
+    updateOne: function (table, value, condition, cb) {
+        var queryString = "UPDATE " + table;
+        queryString += " SET ";
+        queryString += objToSql(value);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
     }
 
 };
