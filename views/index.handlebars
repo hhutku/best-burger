@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row p-6">
+        <div class="col-md-6">
+            <div class="row justify-content-md-center">
+                <h1> Burger List: </h1>
+            </div>
+
+            <div class="row justify-content-md-center">
+                <ol>
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    {{> burgers/burgerList }}
+                    {{/unless}}
+                    {{/each}}
+
+                </ol>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="row justify-content-md-center">
+                <h1>Eaten Burgers: </h1>
+            </div>
+            <div class="row justify-content-md-center">
+                <ol>
+                    {{#each burger}}
+                    {{#if devoured}}
+                    {{> burgers/burgerDevoured}}
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="row justify-content-center p-4 m-4">
+        <form class="text-center">
+            <div class="form-group">
+                <label  for="newBurger">ADD A BURGER</label>
+                <input type="text" class="form-control" id="burgerId" name="name">
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
