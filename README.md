@@ -19,7 +19,7 @@ Run the server ```node server.js```
 
 ### Usage
 
- View the deployed app [here](https://the-best-burger.herokuapp.com//)
+ View the deployed app [here](https://the-best-burger.herokuapp.com)
 
 ### Adding New Burgers
 Users can add additional burger entries to the database by simply adding a new burger.
