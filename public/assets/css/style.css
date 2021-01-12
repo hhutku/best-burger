@@ -1,0 +1,10 @@
+.header { 
+        font-weight: 900;
+   }
+.jumbotron{
+    background-color: rgba(142, 233, 233, 0.75); 
+}
+
+body{
+    background-color: rgba(197, 241, 241, 0.75); 
+}
